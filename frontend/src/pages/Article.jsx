@@ -1,11 +1,15 @@
 import { BackIcon } from "../components/Svg";
 import { Link, useParams } from "react-router-dom";
 import { useContext } from "react";
-import PostsContext from "../contexts/PostsContext.jsx";
+import { PostsContext } from "../contexts/PostsContext.jsx";
 
 function Article() {
-  const { posts } = useContext(PostsContext);
+  const { posts, loading, error } = useContext(PostsContext);
   const { articleId } = useParams();
+
+  if(loading) return <p className="text-center">Loading...</p>;
+  if(error) return <p className="text-red-500">An error occured while fetching post.</p>;
+  if(posts.length === 0) return <p className="text-center">Posts not found.</p>;
 
   const post = posts.find((post) => post.id === articleId)
 

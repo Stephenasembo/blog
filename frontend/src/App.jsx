@@ -1,18 +1,15 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import routes from "./routes.jsx";
-import { useState } from "react";
-import PostsContext from "./contexts/PostsContext.jsx";
+import { BlogProvider } from "./contexts/PostsContext.jsx";
 
 const router = createBrowserRouter(routes);
 
 
 function App() {
-  const [posts, setPosts] = useState([]);
-
   return (
-    <PostsContext value={{ posts, setPosts }}>
+    <BlogProvider>
       <RouterProvider router={router} />
-    </PostsContext>
+    </BlogProvider>
   )
 }
 

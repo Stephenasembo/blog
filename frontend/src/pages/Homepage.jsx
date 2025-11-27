@@ -1,21 +1,15 @@
+import { useContext } from "react";
 import Card from "../components/Card.jsx";
 import NavBar from "../components/NavBar.jsx";
 import Search from "../components/Search.jsx";
-import { useEffect, useContext } from "react";
-import mockApi from "../mocks/api.js";
-import PostsContext from "../contexts/PostsContext.jsx";
+import { PostsContext } from "../contexts/PostsContext.jsx";
 
 function Homepage() {
-  const { posts, setPosts } = useContext(PostsContext);
+  const { posts, loading, error } = useContext(PostsContext)
 
-  useEffect(() => {
-    async function fetchPosts() {
-      let data = await mockApi();
-      data = JSON.parse(data);
-      setPosts(data);
-    }
-    fetchPosts();
-  })
+  if(loading) return <p className="text-center mt-4">Loading...</p>;
+  if(error) return <p className="text-red-500">An error occured while fetching posts.</p>;
+  if(posts.length === 0) return <p className="text-center mt-4">Posts not found.</p>;
 
   return (
     <div
@@ -43,32 +37,6 @@ function Homepage() {
         ))
         }
       </div>
-      {/* <div>
-        <Card
-        image={placeholderImg}
-        imageDescription="This is a placeholder image"
-        title="Sample Card Title"
-        date="June 10, 2024"
-        count={5}
-        articleId={1}
-        />
-        <Card
-        image={placeholderImg}
-        imageDescription="This is a placeholder image"
-        title="Sample Card Title 2"
-        date="June 10, 2024"
-        count={5}
-        articleId={1}
-        />
-        <Card
-        image={placeholderImg}
-        imageDescription="This is a placeholder image"
-        title="Sample Card Title 3"
-        date="June 10, 2024"
-        count={5}
-        articleId={1}
-        />
-      </div> */}
     </div>
   )
 }
