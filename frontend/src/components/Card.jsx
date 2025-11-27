@@ -4,11 +4,11 @@ import Comment from "./Comment";
 function Card({image, imageDescription, title, date, count}) {
   return (
     <div
-    className="grid grid-cols-[max-content_1fr] border gap-3 p-2 my-2"
+    className="grid grid-cols-[max-content_1fr] border gap-3 p-2 my-4 rounded-md"
     >
       <div>
         <img
-        className="w-20 h-20"
+        className="w-20 h-20 rounded-lg"
         src={image} alt={imageDescription} />
       </div>
       <div

@@ -1,5 +1,5 @@
 import Card from "../components/Card.jsx";
-import placeholderImg from "../assets/react.svg";
+import placeholderImg from "../assets/home.jpg";
 
 function Homepage() {
   return (
