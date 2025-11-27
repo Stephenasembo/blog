@@ -14,9 +14,9 @@ function Card({image, imageDescription, title, date, count}) {
       <div
       className="flex flex-col gap-4"
       >
-        <h2
+        <h3
         className="text-lg font-medium"
-        >{title}</h2>
+        >{title}</h3>
         <div
         className="grid grid-cols-[max-content_1fr] gap-1"
         >

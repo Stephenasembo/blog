@@ -1,6 +1,7 @@
 import Card from "../components/Card.jsx";
 import placeholderImg from "../assets/home.jpg";
 import NavBar from "../components/NavBar.jsx";
+import Search from "../components/Search.jsx";
 
 function Homepage() {
   return (
@@ -8,6 +9,10 @@ function Homepage() {
     className="p-4 font-roboto"
     >
       <NavBar />
+      <h2
+      className="text-xl font-semibold text-center m-4"
+      >Recent Posts</h2>
+      <Search />
       <div>
         <Card
         image={placeholderImg}
