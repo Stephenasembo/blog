@@ -27,7 +27,7 @@ function Homepage() {
       >Recent Posts</h2>
       <Search />
       <div
-      className="md:grid md:grid-cols-2 md:gap-6 items-center md:mt-6 lg:grid-cols-3"
+      className="md:grid md:grid-cols-2 md:gap-6 items-center md:mt-6 lg:grid-cols-3 2xl:justify-items-center"
       >
         {posts.length > 0 &&
         posts.map((post) => (

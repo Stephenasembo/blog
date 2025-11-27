@@ -11,20 +11,25 @@ function Article() {
 
   return (
     <div
-    className="p-4"
+    className="py-4"
     >
       <div
-      className="my-2"
+      className="mx-2"
       >
         <Link to="/"><BackIcon /></Link>
       </div>
       <div
       className="md:px-4"
       >
-        <img
-        className="rounded-lg"
-        src={post.imageUrl} alt="Article Image" />
-        <div className="my-4">
+        <div
+        className="w-[300px] h-[225px] md:w-[600px] md:h-[450px] lg:w-[800px] lg:h-[600px] xl:w-[1200px] xl:h-[900px]
+        mx-auto my-2"
+        >
+          <img
+          className="rounded-lg object-cover w-full h-full"
+          src={post.imageUrl} alt="Article Image" />
+        </div>
+        <div className="m-4">
           <h1
           className="text-xl font-bold my-4 text-center"
           >{post.title}</h1>
