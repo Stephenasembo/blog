@@ -18,13 +18,15 @@ function Article() {
       >
         <Link to="/"><BackIcon /></Link>
       </div>
-      <div>
+      <div
+      className="md:px-4"
+      >
         <img
         className="rounded-lg"
         src={post.imageUrl} alt="Article Image" />
         <div className="my-4">
           <h1
-          className="text-xl font-bold my-4"
+          className="text-xl font-bold my-4 text-center"
           >{post.title}</h1>
           <p>{post.content}</p>
         </div>

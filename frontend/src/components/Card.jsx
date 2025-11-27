@@ -6,7 +6,7 @@ function Card({imageUrl, imageDescription, title, date, count, articleId}) {
   return (
     <Link
     to={`/articles/${articleId}`}
-    className="grid grid-cols-[max-content_1fr] border gap-3 p-2 my-4 rounded-md"
+    className="grid grid-cols-[max-content_1fr] border gap-3 p-2 my-4 rounded-md md:m-0"
     >
       <div>
         <img
@@ -20,7 +20,7 @@ function Card({imageUrl, imageDescription, title, date, count, articleId}) {
         className="text-lg font-medium"
         >{title}</h3>
         <div
-        className="grid grid-cols-[max-content_1fr] gap-1"
+        className="flex justify-between w-[95%]"
         >
           <Date date={date}/>
           <Comment count={count} />

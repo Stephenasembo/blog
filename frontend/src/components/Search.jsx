@@ -7,7 +7,7 @@ function Search() {
 
   return (
     <div
-    className="flex gap-1 border rounded-xl p-2 items-center"
+    className="flex gap-1 border rounded-xl p-2 items-center w-full md:w-[66%] lg:w-[50%] xl:w-[33%] mx-auto"
     >
       <SearchIcon />
       <Input

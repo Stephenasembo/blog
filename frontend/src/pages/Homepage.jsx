@@ -26,7 +26,9 @@ function Homepage() {
       className="text-xl font-semibold text-center m-4"
       >Recent Posts</h2>
       <Search />
-      <div>
+      <div
+      className="md:grid md:grid-cols-2 md:gap-6 items-center md:mt-6 lg:grid-cols-3"
+      >
         {posts.length > 0 &&
         posts.map((post) => (
           <Card
