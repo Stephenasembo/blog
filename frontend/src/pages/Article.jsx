@@ -1,20 +1,13 @@
 import { BackIcon } from "../components/Svg";
 import { Link, useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useContext } from "react";
+import PostsContext from "../contexts/PostsContext.jsx";
 
 function Article() {
-  const [post, setPost] = useState({})
-  const {articleId} = useParams();
-  console.log(articleId)
+  const { posts } = useContext(PostsContext);
+  const { articleId } = useParams();
 
-  useEffect(() => {
-    console.log("Fetching article with ID:", articleId);
-    setPost({
-      title: "Sample Article Title",
-      content: "This is the content of the sample article. It contains information about the topic discussed in the article.",
-      imageUrl: "https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-    });
-  }, [articleId])
+  const post = posts.find((post) => post.id === articleId)
 
   return (
     <div

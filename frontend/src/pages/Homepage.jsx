@@ -1,11 +1,12 @@
 import Card from "../components/Card.jsx";
 import NavBar from "../components/NavBar.jsx";
 import Search from "../components/Search.jsx";
-import { useState, useEffect } from "react";
+import { useEffect, useContext } from "react";
 import mockApi from "../mocks/api.js";
+import PostsContext from "../contexts/PostsContext.jsx";
 
 function Homepage() {
-  const [posts, setPosts] = useState([]);
+  const { posts, setPosts } = useContext(PostsContext);
 
   useEffect(() => {
     async function fetchPosts() {
