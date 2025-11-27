@@ -22,7 +22,7 @@ function Article() {
       className="md:px-4"
       >
         <div
-        className="w-[300px] h-[225px] md:w-[600px] md:h-[450px] lg:w-[800px] lg:h-[600px] xl:w-[1200px] xl:h-[900px]
+        className="w-[300px] h-[225px] md:w-[600px] md:h-[450px] lg:w-[800px] lg:h-[600px]
         mx-auto my-2"
         >
           <img
