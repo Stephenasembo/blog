@@ -2,7 +2,7 @@ import Date from "./Date";
 import Comment from "./Comment";
 import { Link } from "react-router-dom";
 
-function Card({image, imageDescription, title, date, count, articleId}) {
+function Card({imageUrl, imageDescription, title, date, count, articleId}) {
   return (
     <Link
     to={`/articles/${articleId}`}
@@ -11,7 +11,7 @@ function Card({image, imageDescription, title, date, count, articleId}) {
       <div>
         <img
         className="w-20 h-20 rounded-lg"
-        src={image} alt={imageDescription} />
+        src={imageUrl} alt={imageDescription} />
       </div>
       <div
       className="flex flex-col gap-4"
