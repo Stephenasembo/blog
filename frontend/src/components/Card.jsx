@@ -1,9 +1,11 @@
 import Date from "./Date";
 import Comment from "./Comment";
+import { Link } from "react-router-dom";
 
-function Card({image, imageDescription, title, date, count}) {
+function Card({image, imageDescription, title, date, count, articleId}) {
   return (
-    <div
+    <Link
+    to={`/article/${articleId}`}
     className="grid grid-cols-[max-content_1fr] border gap-3 p-2 my-4 rounded-md"
     >
       <div>
@@ -24,7 +26,7 @@ function Card({image, imageDescription, title, date, count}) {
           <Comment count={count} />
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
 

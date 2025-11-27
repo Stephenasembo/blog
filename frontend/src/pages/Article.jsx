@@ -1,4 +1,6 @@
 import { BackIcon } from "../components/Svg";
+import { Link } from "react-router-dom";
+
 
 function Article({image, post}) {
   return (
@@ -8,7 +10,7 @@ function Article({image, post}) {
       <div
       className="my-2"
       >
-        <BackIcon />
+        <Link to="/"><BackIcon /></Link>
       </div>
       <div>
         <img

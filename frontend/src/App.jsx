@@ -1,16 +1,11 @@
-import Article from "./pages/Article.jsx";
-import Homepage from "./pages/Homepage.jsx";
-import placeholderImg from "./assets/home.jpg";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import routes from "./routes.jsx";
+
+const router = createBrowserRouter(routes);
 
 function App() {
   return (
-    <Article
-    image={placeholderImg}
-    post={{
-      title: "Sample Article Title",
-      content: "This is a sample article content used to demonstrate the Article component"
-    }}
-    />
+    <RouterProvider router={router} />
   )
 }
 

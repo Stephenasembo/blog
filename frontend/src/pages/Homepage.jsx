@@ -20,6 +20,7 @@ function Homepage() {
         title="Sample Card Title"
         date="June 10, 2024"
         count={5}
+        articleId={1}
         />
         <Card
         image={placeholderImg}
@@ -27,6 +28,7 @@ function Homepage() {
         title="Sample Card Title 2"
         date="June 10, 2024"
         count={5}
+        articleId={1}
         />
         <Card
         image={placeholderImg}
@@ -34,6 +36,7 @@ function Homepage() {
         title="Sample Card Title 3"
         date="June 10, 2024"
         count={5}
+        articleId={1}
         />
       </div>
     </div>
