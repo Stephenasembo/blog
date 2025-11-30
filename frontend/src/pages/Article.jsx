@@ -20,7 +20,9 @@ function Article() {
       <div
       className="mx-2"
       >
-        <Link to="/"><BackIcon /></Link>
+        <button>
+          <Link to="/"><BackIcon /></Link>
+        </button>
       </div>
       <div
       className="md:px-4"
