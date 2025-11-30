@@ -1,0 +1,20 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "A personal blog website",
+  "homepage": "https://github.com/Stephenasembo/blog#readme",
+  "bugs": {
+    "url": "https://github.com/Stephenasembo/blog/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stephenasembo/blog.git"
+  },
+  "license": "ISC",
+  "author": "Stephen Asembo",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
