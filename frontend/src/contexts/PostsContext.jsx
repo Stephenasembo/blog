@@ -18,9 +18,9 @@ function BlogProvider({ children }) {
           "imageUrl": image.asset -> url,
           _createdAt,
           "content": body[0].children[0].text,
+          body,
           }`);
         setPosts(data);
-        console.log(data);
       } catch(error) {
         console.log(error);
         setError(true);

@@ -2,6 +2,7 @@ import { BackIcon } from "../components/Svg";
 import { Link, useParams } from "react-router-dom";
 import { useContext } from "react";
 import { PostsContext } from "../contexts/PostsContext.jsx";
+import { PortableText } from '@portabletext/react';
 
 function Article() {
   const { posts, loading, error } = useContext(PostsContext);
@@ -39,7 +40,9 @@ function Article() {
           <h1
           className="text-xl font-bold my-4 text-center"
           >{post.title}</h1>
-          <p>{post.content}</p>
+          <p className="prose white-space-pre-line">
+            {Array.isArray(post.body) && <PortableText value={post.body} />}
+          </p>
         </div>
       </div>
     </div>
