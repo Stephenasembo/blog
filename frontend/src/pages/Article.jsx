@@ -11,7 +11,7 @@ function Article() {
   if(error) return <p className="text-red-500">An error occured while fetching post.</p>;
   if(posts.length === 0) return <p className="text-center">Posts not found.</p>;
 
-  const post = posts.find((post) => post.id === articleId)
+  const post = posts.find((post) => post._id === articleId)
 
   return (
     <div

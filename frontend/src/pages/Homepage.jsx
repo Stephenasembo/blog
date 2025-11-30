@@ -26,13 +26,13 @@ function Homepage() {
         {posts.length > 0 &&
         posts.map((post) => (
           <Card
-          key={post.id}
+          key={post._id}
           imageUrl={post.imageUrl}
-          imageDescription={post.imageDescription}
+          imageDescription="Image alt text"
           title={post.title}
-          date={post.date}
-          count={post.comments.length}
-          articleId={post.id}
+          date={post._createdAt}
+          count={0}
+          articleId={post._id}
           />
         ))
         }

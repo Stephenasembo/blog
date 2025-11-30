@@ -1,5 +1,5 @@
 import { useState, useEffect, createContext } from "react";
-import mockApi from "../mocks/api.js";
+import { client } from "../sanity/client.js";
 
 const PostsContext = createContext([]);
 
@@ -12,9 +12,15 @@ function BlogProvider({ children }) {
     async function fetchPosts() {
       try{
         setLoading(true)
-        let data = await mockApi();
-        data = JSON.parse(data);
+        let data = await client.fetch(`*[_type == 'post']{
+          _id,
+          title,
+          "imageUrl": image.asset -> url,
+          _createdAt,
+          "content": body[0].children[0].text,
+          }`);
         setPosts(data);
+        console.log(data);
       } catch(error) {
         console.log(error);
         setError(true);
