@@ -8,7 +8,7 @@ export default defineConfig({
   title: 'Asembo Codex',
 
   projectId: '44wpwbl4',
-  dataset: 'development',
+  dataset: 'production',
 
   plugins: [structureTool(), visionTool()],
 
