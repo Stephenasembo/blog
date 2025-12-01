@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { useContext } from "react";
 import { PostsContext } from "../contexts/PostsContext.jsx";
 import { PortableText } from '@portabletext/react';
+import Footer from "../components/Footer.jsx";
 
 function Article() {
   const { posts, loading, error } = useContext(PostsContext);
@@ -45,6 +46,7 @@ function Article() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   )
 }
