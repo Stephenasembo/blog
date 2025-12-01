@@ -4,3 +4,7 @@
 @theme {
   --font-roboto: "Roboto", sans-serif;
 }
+
+.prose p {
+  margin-top: 0.75rem;
+}

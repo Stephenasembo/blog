@@ -40,9 +40,9 @@ function Article() {
           <h1
           className="text-xl font-bold my-4 text-center"
           >{post.title}</h1>
-          <p className="prose white-space-pre-line">
+          <div className="prose">
             {Array.isArray(post.body) && <PortableText value={post.body} />}
-          </p>
+          </div>
         </div>
       </div>
     </div>
