@@ -7,20 +7,19 @@ import { PostsContext } from "../contexts/PostsContext.jsx";
 function Homepage() {
   const [filteredPosts, setFilteredPosts] = useState([]);
   const [query, setQuery] = useState('');
-  const [searchOn, setSearchOn] = useState(false);
-  const { posts, loading, error } = useContext(PostsContext)
+  const [searchEntry, setSearchEntry] = useState('');
+  const { posts, loading, error } = useContext(PostsContext);
 
   function handleSearch(searchQuery) {
     const filtered = posts.filter((post) => post.title.toLowerCase().includes(searchQuery.toLowerCase()));
     setFilteredPosts(filtered);
-    setSearchOn(true);
-    setQuery(searchQuery);
+    setSearchEntry(searchQuery);
   }
 
   function resetSearch() {
     setFilteredPosts([]);
-    setSearchOn(false);
     setQuery('');
+    setSearchEntry('');
   }
 
   if(loading) return <p className="text-center mt-4">Loading...</p>;
@@ -40,9 +39,9 @@ function Homepage() {
       query={query}
       setQuery={setQuery}
       />
-      {searchOn && filteredPosts.length === 0 ?
+      {searchEntry !== '' && filteredPosts.length === 0 ?
         <div className="flex flex-col items-center">
-          <p className="my-8">No matching posts for "{query}". Please check your spelling and try again.</p>
+          <p className="my-8">No matching posts for "{searchEntry}". Please check your spelling and try again.</p>
           <button
           className="block w-max mx-auto border text-lg p-2 m-2 rounded-lg cursor-pointer"
           onClick={resetSearch}
@@ -50,9 +49,8 @@ function Homepage() {
               Show all posts
           </button>
         </div>:
-        <div
-        >
-          {filteredPosts.length > 0 && searchOn ?
+        <div>
+          {filteredPosts.length > 0 && searchEntry !== '' ?
           <div className="flex flex-col gap-2">
             <div
             className="md:grid md:grid-cols-2 md:gap-6 items-center md:mt-6 lg:grid-cols-3 2xl:justify-items-center"

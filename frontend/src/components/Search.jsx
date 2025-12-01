@@ -6,8 +6,9 @@ function Search({onSearch, query, setQuery}) {
 
   const inputRef = useRef(null)
 
-  function handleEnterKey(e) {
-    if(e.key === 'Enter' && query.trim !== '') {
+  function handleSubmit(e) {
+    e.preventDefault();
+    if(query.trim !== '') {
       onSearch(query);
       inputRef.current.blur();
     }
@@ -18,15 +19,19 @@ function Search({onSearch, query, setQuery}) {
     className="flex gap-1 border rounded-xl p-2 items-center w-full md:w-[66%] lg:w-[50%] xl:w-[33%] mx-auto"
     >
       <SearchIcon />
-      <Input
-      type="text"
-      placeholder="Search posts..."
-      value={query}
-      setValue={setQuery}
-      onKeyDown={handleEnterKey}
-      className="flex-1 px-3 py-1 focus:outline-none focus:ring-2 focus:ring-gray-700 rounded-md"
-      ref={inputRef}
-      />
+      <form
+      action="" onSubmit={handleSubmit}
+      className="w-full"
+      >
+        <Input
+        type="search"
+        placeholder="Search posts..."
+        value={query}
+        setValue={setQuery}
+        className="flex-1 px-3 py-1 focus:outline-none focus:ring-2 focus:ring-gray-700 rounded-md w-full"
+        ref={inputRef}
+        />
+      </form>
     </div>
   )
 }
