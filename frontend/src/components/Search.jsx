@@ -1,9 +1,17 @@
 import { SearchIcon } from "./Svg";
 import Input from "./Input";
-import { useState } from "react";
+import { useRef } from "react";
 
-function Search() {
-  const [value, setValue] = useState("");
+function Search({onSearch, query, setQuery}) {
+
+  const inputRef = useRef(null)
+
+  function handleEnterKey(e) {
+    if(e.key === 'Enter' && query.trim !== '') {
+      onSearch(query);
+      inputRef.current.blur();
+    }
+  }
 
   return (
     <div
@@ -13,9 +21,11 @@ function Search() {
       <Input
       type="text"
       placeholder="Search posts..."
-      value={value}
-      setValue={setValue}
+      value={query}
+      setValue={setQuery}
+      onKeyDown={handleEnterKey}
       className="flex-1 px-3 py-1 focus:outline-none focus:ring-2 focus:ring-gray-700 rounded-md"
+      ref={inputRef}
       />
     </div>
   )

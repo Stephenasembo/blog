@@ -1,4 +1,4 @@
-function Input({type, value, setValue, placeholder, className}) {
+function Input({type, value, setValue, placeholder, className, onKeyDown, ref}) {
   return (
     <input
     type={type}
@@ -9,6 +9,8 @@ function Input({type, value, setValue, placeholder, className}) {
       setValue(newValue);
     }}
     placeholder={placeholder}
+    onKeyDown={onKeyDown}
+    ref={ref}
     />
   )
 }
