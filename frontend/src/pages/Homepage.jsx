@@ -35,7 +35,7 @@ function Homepage() {
         <NavBar />
         <h2
         className="text-xl font-semibold text-center m-4"
-        >Recent Posts</h2>
+        >{searchEntry === '' ? 'Recent Posts' : `Showing search results for "${searchEntry}"`}</h2>
         <Search
         onSearch={handleSearch}
         query={query}
