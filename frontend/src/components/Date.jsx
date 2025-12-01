@@ -1,14 +1,22 @@
 import { DateIcon } from "./Svg";
 
-function Date({ date }) {
+function formatDate(date) {
+  const newDate = new Date(date);
+
+  const dateStr = `${newDate.getDate()} ${newDate.toLocaleString("en-US", {month: "short"})} ${newDate.getFullYear()}`
+
+  return dateStr
+}
+
+function DateComponent({ date }) {
   return (
     <div
     className="grid grid-cols-[max-content_1fr] items-center gap-1"
     >
       <DateIcon />
-      <span>{date}</span>
+      <span>{formatDate(date)}</span>
     </div>
   )
 }
 
-export default Date;
+export default DateComponent;

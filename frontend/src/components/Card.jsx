@@ -1,4 +1,4 @@
-import Date from "./Date";
+import DateComponent from "./Date";
 import Comment from "./Comment";
 import { Link } from "react-router-dom";
 
@@ -22,7 +22,7 @@ function Card({imageUrl, imageDescription, title, date, count, articleId}) {
         <div
         className="flex justify-between w-[95%] xl:pr-8"
         >
-          <Date date={date}/>
+          <DateComponent date={date}/>
           <Comment count={count} />
         </div>
       </div>
