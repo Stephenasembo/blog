@@ -31,7 +31,6 @@ function Homepage() {
           imageDescription="Image alt text"
           title={post.title}
           date={post._createdAt}
-          count={0}
           articleId={post._id}
           />
         ))
